@@ -19,7 +19,7 @@ const Form = () => {
         e.preventDefault();
 
         try {
-            const backendURL = "http://localhost:3005/users";
+            const backendURL = "https://crud-fab1.onrender.com/users";
             await axios.post(backendURL, formData);
 
             setFormData({
@@ -37,7 +37,7 @@ const Form = () => {
 
     const fetchData = async () => {
         try {
-            const response = await axios.get("http://localhost:3005/get/users");
+            const response = await axios.get("https://crud-fab1.onrender.com/get/users");
             setFormDataList(response.data);
         } catch (error) {
             console.error("Error fetching data:", error);
@@ -50,7 +50,7 @@ const Form = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:3005/users/${id}`);
+            await axios.delete(`https://crud-fab1.onrender.com/users/${id}`);
             fetchData();
         } catch (error) {
             console.error("Error deleting data:", error);
